@@ -95,8 +95,7 @@ object cactus {
 			paso=1.5	
 			}else{
 				paso=2.5
-			}
-			
+			}	
 		}
 		position = position.left(paso)
 		
