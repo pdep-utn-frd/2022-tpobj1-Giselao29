@@ -68,6 +68,9 @@ object reloj {
 	method detener(){
 		game.removeTickEvent("tiempo")
 	}
+	method tiempo(){
+		return tiempo
+	}
 }
 
 object cactus {
@@ -84,8 +87,20 @@ object cactus {
 	}
 	
 	method mover(){
-		position = position.left(1)
-		if (position.x() == -1)
+		var paso=0
+		if(reloj.tiempo()<50){
+			paso=1
+		}else{
+			if(reloj.tiempo()<100){
+			paso=1.5	
+			}else{
+				paso=2.5
+			}
+			
+		}
+		position = position.left(paso)
+		
+		if (position.x() < 0)
 			position = posicionInicial
 	}
 	
